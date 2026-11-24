@@ -153,24 +153,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: calc(var(--u) * 3.2);
-  background: var(--black);
-  color: var(--white);
+  padding: calc(var(--u) * 3.6);
+  background: var(--white);
+  color: var(--black);
 }
-.tile-title::before {
+.tile-title::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(var(--u) * 5);
-  height: calc(var(--u) * 5);
-  background: var(--pink);
+  inset: calc(var(--u) * 1.2);
+  border: 1px solid var(--pink);
+  pointer-events: none;
 }
 .collage-title {
   margin: calc(var(--u) * 1.2) 0 0;
   font-family: var(--serif);
   font-weight: 400;
-  font-size: calc(var(--u) * 6.6);
+  font-size: calc(var(--u) * 5.8);
   line-height: .95;
 }
 .tile-intro {
