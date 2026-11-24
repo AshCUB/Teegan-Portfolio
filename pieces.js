@@ -1,0 +1,150 @@
+window.PORTFOLIO = {
+  artist: "Teegan Reed",
+  title: "Art Portfolio",
+  subtitle: "Ceramics & Digital Illustration",
+  coverImage: "assets/images/season-for-reading.jpg",
+  about: [
+    "Teegan Reed is an artist working across clay and digital illustration.",
+    "In ceramics, everyday objects like mugs, shakers, and figures become small stories with a sense of humor. In digital work, folklore, nature, and cozy, character-driven scenes take center stage.",
+    "Across both, the throughline is bold color, playful detail, and work that feels warm to live with.",
+  ],
+  sections: [
+    {
+      id: "ceramics",
+      title: "Ceramics",
+      intro:
+        "Functional and sculptural pieces built by hand and on the wheel. Everyday forms like mugs, shakers, and figures become vehicles for humor, storytelling, and bold color.",
+      pieces: [
+        {
+          title: "Fish with Legs",
+          medium: "Ceramic & glaze",
+          image: "assets/images/fish-with-legs.png",
+          blurb:
+            "A bright orange fish that decided water was optional. Sculpted in clay and finished in glossy glazes, it stands tall on sneaker-clad legs and rolled-up denim, a playful study in pairing the familiar with the absurd.",
+        },
+        {
+          title: "Dragon Rainbow",
+          medium: "Ceramic & glaze",
+          image: "assets/images/dragon-rainbow.png",
+          blurb:
+            "A serpentine dragon covered in hundreds of individually sculpted scales, each glazed in sequence so the body ripples through the full spectrum. Its arching coils dip in and out of the ground as if swimming through it.",
+        },
+        {
+          title: "Carousel",
+          medium: "Ceramic & glaze",
+          image: "assets/images/carousel.png",
+          blurb:
+            "A miniature carousel with a scalloped canopy, slender poles, and tiny riders circling the base. The piece balances architectural structure with whimsical detail, finished in warm honey and coral glazes.",
+        },
+        {
+          title: "Salt & Pepper Shakers",
+          subtitle: "Baker\u2019s Cart & Man",
+          medium: "Functional ceramic & glaze",
+          image: "assets/images/baker-cart-shakers.png",
+          blurb:
+            "A salt and pepper set disguised as a street bakery: a striped-awning cart and its round, rosy-cheeked baker, served beside a dish of glazed pastries. Every piece is functional, and every piece tells part of the story.",
+        },
+        {
+          title: "Pop Art Mug & Coaster",
+          subtitle: "Catbus",
+          medium: "Functional ceramic & glaze",
+          image: "assets/images/catbus-mug.png",
+          blurb:
+            "A mug and matching coaster inspired by the Catbus from My Neighbor Totoro. The mug becomes the bus itself, while the coaster carries its wide, unmistakable grin, turning pop culture into everyday ceramics.",
+        },
+      ],
+    },
+    {
+      id: "digital",
+      title: "Digital Art",
+      intro:
+        "Illustration, character design, and sequential art created digitally. Folklore, nature, and warmth run through work that ranges from single portraits to full comic pages.",
+      pieces: [
+        {
+          title: "The Season for Reading",
+          medium: "Digital illustration",
+          image: "assets/images/season-for-reading.jpg",
+          blurb:
+            "An autumn evening in a cozy bedroom: string lights glowing outside, a candle burning, and a reader lost in a book with her feet in the air. Hand-lettered type and a tower of real book spines make this a love letter to reading season.",
+        },
+        {
+          title: "Lady of the Seals",
+          medium: "Digital illustration",
+          image: "assets/images/lady-of-the-seals.jpg",
+          blurb:
+            "A joyful, folklore-inspired portrait of a red-haired woman surrounded by playful seals beneath a curtain of kelp. Soft underwater light and bubbly hand lettering give the piece a storybook warmth.",
+        },
+        {
+          title: "Beach Day",
+          medium: "Digital illustration",
+          image: "assets/images/beach-day.jpg",
+          blurb:
+            "A laughing figure is ambushed with affection by two spotted seals at the water\u2019s edge. Layered brushwork in the surf and sunlight captures movement, sparkle, and pure delight.",
+        },
+        {
+          title: "A Seal\u2019s Kiss",
+          medium: "Digital illustration",
+          image: "assets/images/a-seals-kiss.jpg",
+          blurb:
+            "Framed by an ornate, heart-patterned border, a curly-haired figure shares a gentle nose-to-nose moment with a seal. Sweeping golden shapes and soft rays of light turn a quiet gesture into a celebration of tenderness.",
+        },
+        {
+          title: "Into the Hollow",
+          medium: "Digital illustration",
+          image: "assets/images/into-the-hollow.jpg",
+          blurb:
+            "A sword-carrying wanderer with butterfly-wing tattoos pauses in a tunnel of autumn foliage, reaching toward a single glowing moth. A restrained palette of rust and umber lets one small point of light carry the whole composition.",
+        },
+        {
+          title: "Woodland Maiden",
+          medium: "Digital illustration",
+          image: "assets/images/woodland-maiden.jpg",
+          blurb:
+            "A red-haired woman in a laced bodice and billowing sleeves stands among dense golden-green leaves, a tiny ember of light at her fingertips. Rich foliage texture frames the figure like a living portrait.",
+        },
+        {
+          title: "The Huntress",
+          medium: "Digital illustration",
+          image: "assets/images/the-huntress.jpg",
+          blurb:
+            "A forest archer leaps through a frame of leaves, bow drawn mid-flight. The muted sage-and-stone palette and strong diagonal pose put the focus on gesture, anatomy, and motion.",
+        },
+        {
+          title: "Want a Sunflower?",
+          medium: "Digital illustration",
+          image: "assets/images/want-a-sunflower.jpg",
+          blurb:
+            "A bashful, wide-eyed centaur offers a bouquet of sunflowers on a glowing forest path. Drifting flecks of light, layered golden foliage, and a comic-style speech bubble give the moment a sweet, storybook charm.",
+        },
+        {
+          title: "Bakery Escape",
+          medium: "Digital comic page",
+          image: "assets/images/bakery-escape.jpg",
+          blurb:
+            "A full comic page following a daring dash out of a village bakery, with a central splash panel framed by smaller action beats. A coordinated green-and-brown palette and a character expression key show sequential storytelling and design planning.",
+        },
+        {
+          title: "You Are Enough",
+          medium: "Digital poster",
+          image: "assets/images/you-are-enough.jpg",
+          blurb:
+            "A vibrant poster of affectionate couples and friends, each vignette colored after a different pride flag. Swirling rainbow linework ties the scenes together around a simple, sincere message.",
+        },
+        {
+          title: "Pretty in Pink",
+          medium: "Digital illustration",
+          image: "assets/images/pretty-in-pink.jpg",
+          blurb:
+            "A golden-curled elf in a puff-sleeved pink gown beams against a deep, dappled green backdrop. The complementary pink-and-green palette makes the character\u2019s joy leap off the page.",
+        },
+        {
+          title: "Golden Hour",
+          medium: "Digital character portrait",
+          image: "assets/images/golden-hour.jpg",
+          blurb:
+            "A character portrait focused on skin tone, lighting, and hair texture: sculpted buns, warm highlights, and soft rim light against a clean background. A study in rendering and expression.",
+        },
+      ],
+    },
+  ],
+};

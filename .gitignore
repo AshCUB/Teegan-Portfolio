@@ -1,0 +1,6 @@
+node_modules/
+tools/
+tmp/
+_test.html
+Thumbs.db
+desktop.ini

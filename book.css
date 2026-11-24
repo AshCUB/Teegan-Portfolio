@@ -1,0 +1,300 @@
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--black);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---------- Screen navigation ---------- */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--white);
+  border-bottom: 2px solid var(--pink);
+}
+.nav-mark { width: 92px; }
+.nav nav { display: flex; align-items: center; gap: 24px; font-size: 16px; letter-spacing: .06em; text-transform: uppercase; }
+.nav nav a:hover { color: var(--pink); }
+.nav-print {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  border: 0;
+  padding: 8px 16px;
+  background: var(--pink);
+  color: var(--black);
+}
+.nav-print:hover { background: var(--black); color: var(--white); }
+
+#book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 88px 24px 48px;
+}
+
+/* ---------- Page grid ----------
+   Every page is an 11 x 8.5 in sheet. --u is one-tenth of an inch at
+   print size and scales proportionally on screen, so the website and
+   the PDF share exactly the same layout. */
+.page {
+  --u: calc(100cqw / 110);
+  position: relative;
+  container-type: inline-size;
+  width: min(100%, 1320px);
+  aspect-ratio: 11 / 8.5;
+  overflow: hidden;
+  background: var(--white);
+}
+.page > * { --u: calc(100cqw / 110); }
+
+.eyebrow {
+  margin: 0;
+  font-size: calc(var(--u) * 1.1);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+.folio {
+  position: absolute;
+  left: calc(var(--u) * 5);
+  right: calc(var(--u) * 5);
+  bottom: calc(var(--u) * 2.6);
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(var(--u) * 1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.folio span:nth-child(2) { color: var(--pink); }
+
+/* ---------- Cover ---------- */
+.cover {
+  display: grid;
+  grid-template-columns: 46fr 64fr;
+}
+.cover-text {
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--u) * 7) calc(var(--u) * 5) calc(var(--u) * 5) calc(var(--u) * 6);
+}
+.cover-mark { width: calc(var(--u) * 32); }
+.cover-title {
+  margin: calc(var(--u) * 3) 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: calc(var(--u) * 6.4);
+  line-height: 1;
+  color: var(--pink);
+}
+.cover-sub {
+  margin: calc(var(--u) * 1.6) 0 0;
+  font-size: calc(var(--u) * 1.6);
+  letter-spacing: .08em;
+}
+.cover-toc {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0;
+  border-top: 1px solid var(--black);
+}
+.cover-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--u) * 1.6);
+  padding: calc(var(--u) * 1.2) 0;
+  border-bottom: 1px solid var(--black);
+  font-family: var(--serif);
+  font-size: calc(var(--u) * 2.4);
+}
+.cover-toc span { font-family: var(--sans); font-size: calc(var(--u) * 1.2); color: var(--pink); letter-spacing: .1em; }
+.cover-toc em { margin-left: auto; font-family: var(--sans); font-style: normal; font-size: calc(var(--u) * 1.2); letter-spacing: .1em; }
+.cover-image { position: relative; background: var(--pink); }
+.cover-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Section divider ---------- */
+.divider {
+  display: grid;
+  grid-template-columns: 40fr 70fr;
+  gap: calc(var(--u) * 6);
+  padding: calc(var(--u) * 6) calc(var(--u) * 5) calc(var(--u) * 7);
+  background: var(--pink);
+}
+.divider .eyebrow { color: var(--black); }
+.divider-text { display: flex; flex-direction: column; justify-content: flex-end; }
+.divider-title {
+  margin: calc(var(--u) * 1.4) 0 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: calc(var(--u) * 8.4);
+  line-height: .95;
+}
+.divider-intro {
+  margin: calc(var(--u) * 3) 0 0;
+  padding-top: calc(var(--u) * 2);
+  border-top: 1px solid var(--black);
+  font-size: calc(var(--u) * 1.6);
+  line-height: 1.5;
+}
+.thumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: calc(var(--u) * 1.2);
+  align-content: end;
+}
+.thumbs-few { grid-template-columns: repeat(3, 1fr); }
+.thumbs-many { grid-template-columns: repeat(4, 1fr); }
+.thumbs a { position: relative; display: block; background: var(--white); }
+.thumbs img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.thumbs span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: calc(var(--u) * .4) calc(var(--u) * .8);
+  background: var(--white);
+  font-size: calc(var(--u) * 1.1);
+  letter-spacing: .1em;
+}
+.divider .folio span:nth-child(2) { color: var(--black); }
+
+/* ---------- Piece page ---------- */
+.piece {
+  display: grid;
+  grid-template-columns: 66fr 32fr;
+  gap: calc(var(--u) * 6);
+  padding: calc(var(--u) * 4) calc(var(--u) * 5) calc(var(--u) * 6);
+}
+.piece-flip { grid-template-columns: 32fr 66fr; }
+.piece-flip .piece-image { order: 2; }
+.piece-image {
+  margin: 0;
+  min-height: 0;
+  height: calc(var(--u) * 75);
+}
+.piece-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+}
+.piece-flip .piece-image img { object-position: left center; }
+.piece-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--u) * 2) 0 calc(var(--u) * 2);
+}
+.piece-num {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: calc(var(--u) * 7);
+  line-height: 1;
+  color: var(--pink);
+}
+.piece-title {
+  margin: calc(var(--u) * 1.4) 0 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: calc(var(--u) * 3.8);
+  line-height: 1.05;
+}
+.piece-subtitle {
+  margin: calc(var(--u) * .8) 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: calc(var(--u) * 2.2);
+  line-height: 1.1;
+}
+.piece hr {
+  width: calc(var(--u) * 6);
+  margin: calc(var(--u) * 2.2) 0;
+  border: 0;
+  border-top: 2px solid var(--pink);
+}
+.piece-blurb {
+  margin: 0;
+  font-size: calc(var(--u) * 1.5);
+  line-height: 1.55;
+}
+.piece-medium {
+  margin: calc(var(--u) * 2) 0 0;
+  font-size: calc(var(--u) * 1.05);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+/* ---------- Closing ---------- */
+.closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--pink);
+}
+.closing-mark { width: calc(var(--u) * 40); }
+.closing-text {
+  margin: calc(var(--u) * 4) 0 0;
+  color: var(--white);
+  font-size: calc(var(--u) * 1.4);
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+/* ---------- Small screens: stack pages naturally ---------- */
+@media screen and (max-width: 760px) {
+  .nav { padding: 0 16px; }
+  .nav nav { gap: 14px; font-size: 13px; }
+  .nav nav a { display: none; }
+  #book { padding: 72px 0 32px; gap: 16px; }
+  .page, .page > * { --u: 7px; }
+  .page { aspect-ratio: auto; }
+  .cover, .divider, .piece, .piece-flip { grid-template-columns: 1fr; }
+  .cover-image { order: -1; height: 70vh; }
+  .cover-text { padding: 40px 24px; }
+  .cover-toc { margin-top: 40px; }
+  .divider { gap: 32px; padding: 40px 24px 64px; }
+  .thumbs-many { grid-template-columns: repeat(3, 1fr); }
+  .piece { gap: 24px; padding: 16px 16px 64px; }
+  .piece-flip .piece-image { order: 0; }
+  .piece-image { height: auto; }
+  .piece-image img { height: auto; max-height: 80vh; object-position: center; }
+  .piece-text { padding: 0 8px; gap: 24px; }
+  .folio { left: 24px; right: 24px; bottom: 20px; }
+  .closing { min-height: 60vh; }
+}
+
+/* ---------- Print / PDF ---------- */
+@page { size: 11in 8.5in; margin: 0; }
+
+@media print {
+  html, body { background: var(--white); }
+  .nav { display: none; }
+  #book { display: block; padding: 0; }
+  .page {
+    width: 11in;
+    height: 8.5in;
+    aspect-ratio: auto;
+    break-after: page;
+    break-inside: avoid;
+  }
+  .page:last-child { break-after: auto; }
+}

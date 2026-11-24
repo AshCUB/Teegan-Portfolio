@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teegan Reed — Ceramics &amp; Digital Illustration</title>
+  <meta name="description" content="The art portfolio of Teegan Reed: hand-built ceramics and digital illustration.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Teegan Reed, home" data-wordmark></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a class="nav-pill" href="pdf.html">Portfolio PDF</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="kicker reveal">Art Portfolio &mdash; Ceramics &amp; Digital Illustration</p>
+        <h1 class="hero-title reveal">Hi, I&rsquo;m <em>Teegan&nbsp;Reed.</em> <span class="hero-sub">Scroll down to see my work.</span></h1>
+        <div class="hero-foot reveal">
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#work">View the work</a>
+            <a class="btn btn-line" href="pdf.html">Portfolio PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+    </section>
+
+    <section class="work container" id="work">
+      <div class="section-head reveal">
+        <h2 class="section-title">The <em>Gallery</em></h2>
+        <div class="filters" id="filters" role="group" aria-label="Filter work"></div>
+      </div>
+      <ul class="grid" id="grid"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-mark" href="index.html" aria-label="Teegan Reed, home" data-wordmark></a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="pdf.html">Portfolio PDF</a>
+      </nav>
+      <p class="footer-copy">&copy; <span data-year></span> Teegan Reed</p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Artwork viewer">
+    <div class="lb">
+      <figure class="lb-stage"><img id="lb-img" alt=""></figure>
+      <aside class="lb-info">
+        <div class="lb-top">
+          <span class="lb-count" id="lb-count"></span>
+          <button type="button" class="lb-icon" data-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg>
+          </button>
+        </div>
+        <div class="lb-text">
+          <p class="kicker" id="lb-section"></p>
+          <h3 class="lb-title" id="lb-title"></h3>
+          <p class="lb-sub" id="lb-sub"></p>
+          <p class="lb-blurb" id="lb-blurb"></p>
+          <p class="lb-medium" id="lb-medium"></p>
+        </div>
+        <div class="lb-nav">
+          <button type="button" class="lb-icon" data-prev aria-label="Previous piece">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button type="button" class="lb-icon" data-next aria-label="Next piece">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </dialog>
+
+  <script src="wordmark.js"></script>
+  <script src="pieces.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
