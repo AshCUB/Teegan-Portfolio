@@ -4,3 +4,6 @@ tmp/
 _test.html
 Thumbs.db
 desktop.ini
+
+# Licensed fonts are not redistributed; see README.md
+assets/fonts/
