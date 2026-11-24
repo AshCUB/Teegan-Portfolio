@@ -9,14 +9,14 @@ Portfolio website for Teegan Reed (ceramics and digital illustration), with a pr
 
 ## Fonts
 
-The font files are **not included** in this repository because they are licensed and can't be redistributed. Obtain them from the foundries under your own license, then place them in `assets/fonts/` with these exact filenames:
+This project uses the following typefaces. They are owned and licensed by their respective foundries and are **not** covered by this repository. If you reuse any of this code, obtain the fonts from the sources below under your own license terms.
 
-| Font | Used for | Filename(s) | Source |
-| --- | --- | --- | --- |
-| Bedross (Regular, Italic) | Headings | `Bedross-Regular.ttf`, `Bedross-Italic.ttf` | Purchase or download from the font's official foundry / distributor |
-| Calibre Regular | Body text | `Calibre-Regular.otf` | [Klim Type Foundry](https://klim.co.nz/retail-fonts/calibre/) |
+| Font | Used for | Source |
+| --- | --- | --- |
+| Bedross | Headings | [Envato](https://app.envato.com/search/fonts/7e19a6af-c2b4-42b1-a992-3a27966934e7?itemType=fonts&itemReference=7e19a6af-c2b4-42b1-a992-3a27966934e7&filter.categories_gemini=serif) |
+| Calibre | Body text | [Klim Type Foundry](https://klim.co.nz/retail-fonts/calibre/) |
 
-Without these files the site falls back to Georgia (headings) and Helvetica / Arial (body).
+Font files go in `assets/fonts/` as `Bedross-Regular.ttf`, `Bedross-Italic.ttf`, and `Calibre-Regular.otf`.
 
 ## Exporting the PDF
 
