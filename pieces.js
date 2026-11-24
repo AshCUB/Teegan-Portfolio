@@ -49,6 +49,7 @@ window.PORTFOLIO = {
           subtitle: "Catbus",
           medium: "Functional ceramic & glaze",
           image: "assets/images/catbus-mug.png",
+          focus: "50% 72%",
           blurb:
             "A mug and matching coaster inspired by the Catbus from My Neighbor Totoro. The mug becomes the bus itself, while the coaster carries its wide, unmistakable grin, turning pop culture into everyday ceramics.",
         },

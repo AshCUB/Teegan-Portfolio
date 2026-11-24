@@ -37,22 +37,34 @@
       <div class="cover-image"><img src="${coverImage}" alt=""></div>
     </section>`);
 
+  // 6 x 4 collage grids keyed by piece count. pN = piece N, t = title tile, n = intro tile.
+  const collages = {
+    5: ["p0 p0 p2 p2 t t", "p0 p0 p2 p2 t t", "p0 p0 p3 p1 n n", "p0 p0 p4 p4 n n"],
+    12: ["p3 p0 p0 p4 p1 p1", "p5 t t p4 p6 p7", "p5 t t p8 p6 p9", "p10 p11 n n p2 p2"],
+  };
+
   sections.forEach((s, si) => {
+    const areas = collages[s.pieces.length];
+    const gridStyle = areas ? `grid-template-areas:${areas.map((r) => `'${r}'`).join(" ")}` : "";
     pages.push(`
-      <section class="page divider" id="${s.id}">
-        <div class="divider-text">
+      <section class="page collage${areas ? "" : " collage-auto"}" id="${s.id}" style="${gridStyle}">
+        <div class="tile tile-title">
           <p class="eyebrow">Section ${pad(si + 1)}</p>
-          <h2 class="divider-title">${esc(s.title)}</h2>
-          <p class="divider-intro">${esc(s.intro)}</p>
+          <h2 class="collage-title">${esc(s.title)}</h2>
         </div>
-        <ol class="thumbs thumbs-${s.pieces.length > 6 ? "many" : "few"}">
-          ${s.pieces
-            .map(
-              (p, i) => `<li><a href="#${s.id}-${i + 1}"><img src="${p.image}" alt=""><span>${pad(i + 1)}</span></a></li>`
-            )
-            .join("")}
-        </ol>
-        ${footer(s.title)}
+        <div class="tile tile-intro">
+          <p>${esc(s.intro)}</p>
+          <p class="tile-count">${pad(s.pieces.length)} pieces</p>
+        </div>
+        ${s.pieces
+          .map(
+            (p, i) => `
+            <a class="tile tile-img" href="#${s.id}-${i + 1}" style="grid-area:p${i}">
+              <img src="${p.image}" alt=""${p.focus ? ` style="object-position:${p.focus}"` : ""}>
+              <span>${pad(i + 1)}</span>
+            </a>`
+          )
+          .join("")}
       </section>`);
 
     s.pieces.forEach((p, i) => {
