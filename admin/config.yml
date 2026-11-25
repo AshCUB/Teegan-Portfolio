@@ -3,8 +3,7 @@ backend:
   name: git-gateway
   repo: AshCUB/Teegan-Portfolio
   branch: main
-  # Replace with the identity URL from your DecapBridge site dashboard.
-  identity_url: https://auth.decapbridge.com/sites/REPLACE_WITH_DECAPBRIDGE_SITE_ID
+  identity_url: https://auth.decapbridge.com/sites/34277d0e-5558-4921-a6ec-8342b92691b7
   gateway_url: https://gateway.decapbridge.com
   commit_messages:
     create: "Create {{collection}} “{{slug}}” via editor ({{author-name}})"
