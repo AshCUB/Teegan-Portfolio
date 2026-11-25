@@ -1,9 +1,12 @@
-# Decap CMS editor for the portfolio. Login is handled by DecapBridge (email + password).
+# Decap CMS editor for the portfolio. Login is handled by DecapBridge (Google, Microsoft, or email + password).
 backend:
   name: git-gateway
   repo: AshCUB/Teegan-Portfolio
   branch: main
-  identity_url: https://auth.decapbridge.com/sites/34277d0e-5558-4921-a6ec-8342b92691b7
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/34277d0e-5558-4921-a6ec-8342b92691b7/pkce
+  auth_token_endpoint: /sites/34277d0e-5558-4921-a6ec-8342b92691b7/token
   gateway_url: https://gateway.decapbridge.com
   commit_messages:
     create: "Create {{collection}} “{{slug}}” via editor ({{author-name}})"
