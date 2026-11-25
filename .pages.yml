@@ -48,10 +48,6 @@ content:
                 label: Title
                 type: string
                 required: true
-              - name: subtitle
-                label: Subtitle
-                type: string
-                description: Optional, e.g. the character or theme.
               - name: image
                 label: Image
                 type: image
@@ -86,7 +82,3 @@ content:
       - name: coverImage
         label: PDF cover image
         type: image
-      - name: about
-        label: About text (not currently shown on the site)
-        type: text
-        list: true

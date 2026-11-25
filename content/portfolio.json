@@ -24,15 +24,13 @@
           "medium": "Ceramic & glaze"
         },
         {
-          "title": "Salt & Pepper Shakers",
-          "subtitle": "Baker’s Cart & Man",
+          "title": "Salt & Pepper Shakers: Baker’s Cart & Man",
           "image": "/assets/images/baker-cart-shakers.png",
           "blurb": "A salt and pepper set disguised as a street bakery: a striped-awning cart and its round, rosy-cheeked baker, served beside a dish of glazed pastries. Every piece is functional, and every piece tells part of the story.",
           "medium": "Functional ceramic & glaze"
         },
         {
-          "title": "Pop Art Mug & Coaster",
-          "subtitle": "Catbus",
+          "title": "Pop Art Mug & Coaster: Catbus",
           "image": "/assets/images/catbus-mug.png",
           "blurb": "A mug and matching coaster inspired by the Catbus from My Neighbor Totoro. The mug becomes the bus itself, while the coaster carries its wide, unmistakable grin, turning pop culture into everyday ceramics.",
           "medium": "Functional ceramic & glaze",
@@ -135,10 +133,5 @@
   "artist": "Teegan Reed",
   "title": "Art Portfolio",
   "subtitle": "Ceramics & Digital Illustration",
-  "coverImage": "/assets/images/season-for-reading.jpg",
-  "about": [
-    "Teegan Reed is an artist working across clay and digital illustration.",
-    "In ceramics, everyday objects like mugs, shakers, and figures become small stories with a sense of humor. In digital work, folklore, nature, and cozy, character-driven scenes take center stage.",
-    "Across both, the throughline is bold color, playful detail, and work that feels warm to live with."
-  ]
+  "coverImage": "/assets/images/season-for-reading.jpg"
 }

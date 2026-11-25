@@ -1,4 +1,4 @@
-loadPortfolio().then(({ sections, about }) => {
+loadPortfolio().then(({ sections }) => {
   const $ = (sel) => document.querySelector(sel);
   const pad = (n) => String(n).padStart(2, "0");
   const esc = (s = "") =>
@@ -62,7 +62,7 @@ loadPortfolio().then(({ sections, about }) => {
             <span class="card-media"><img src="${p.image}" alt="${esc(p.title)}" loading="lazy"></span>
             <span class="card-meta">
               <span class="card-num">${pad(p.n)}</span>
-              <span class="card-title">${esc(p.title)}${p.subtitle ? ` <em>${esc(p.subtitle)}</em>` : ""}</span>
+              <span class="card-title">${esc(p.title)}</span>
               <span class="card-medium">${esc(p.medium)}</span>
             </span>
           </button>
@@ -94,25 +94,6 @@ loadPortfolio().then(({ sections, about }) => {
       if (b) applyFilter(b.dataset.filter);
     });
 
-    const aboutBody = $("#about-body");
-    if (aboutBody) aboutBody.innerHTML = about.map((p) => `<p>${esc(p)}</p>`).join("");
-    const disciplines = $("#disciplines");
-    if (disciplines) disciplines.innerHTML = sections
-      .map(
-        (s) => `
-        <article class="discipline reveal">
-          <span class="discipline-count">${pad(s.pieces.length)}</span>
-          <h3>${esc(s.title)}</h3>
-          <p>${esc(s.intro)}</p>
-          <a href="#work" class="text-link" data-jump="${s.id}">View ${esc(s.title.toLowerCase())}</a>
-        </article>`
-      )
-      .join("");
-    document.addEventListener("click", (e) => {
-      const j = e.target.closest("[data-jump]");
-      if (j) applyFilter(j.dataset.jump);
-    });
-
     const lb = $("#lightbox");
     const lbImg = $("#lb-img");
     let current = 0;
@@ -126,7 +107,6 @@ loadPortfolio().then(({ sections, about }) => {
       $("#lb-count").textContent = `${pad(list.indexOf(i) + 1)} / ${pad(list.length)}`;
       $("#lb-section").textContent = `${p.sectionTitle} — ${pad(p.n)}`;
       $("#lb-title").textContent = p.title;
-      $("#lb-sub").textContent = p.subtitle || "";
       $("#lb-blurb").textContent = p.blurb;
       $("#lb-medium").textContent = p.medium;
     };

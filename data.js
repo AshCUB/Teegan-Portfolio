@@ -20,7 +20,6 @@ function normalize(data) {
   const slug = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   // CMS stores "/assets/..."; make it relative so it works on the GitHub Pages subpath and from file://.
   const rel = (p) => String(p || "").replace(/^\/+/, "");
-  data.about = data.about || [];
   data.sections = (data.sections || []).map((s, i) => {
     let id = slug(s.title) || `section-${i + 1}`;
     while (used.has(id)) id += "-" + (i + 1);
