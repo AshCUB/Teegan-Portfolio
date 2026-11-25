@@ -1,0 +1,92 @@
+# Pages CMS editor (https://app.pagescms.org). Saving commits to this repo, which rebuilds the site and PDF.
+media:
+  input: assets/images
+  output: /assets/images
+  categories: [image]
+  rename: safe
+
+settings:
+  commit:
+    identity: user
+
+content:
+  - name: portfolio
+    label: Portfolio
+    type: file
+    path: content/portfolio.json
+    format: json
+    fields:
+      - name: sections
+        label: Sections
+        type: object
+        description: Drag to reorder. Each section gets its own collage page in the PDF.
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Section name
+            type: string
+            required: true
+          - name: intro
+            label: Section intro
+            type: text
+          - name: slideshow
+            label: Show these pieces in the homepage slideshow
+            type: boolean
+          - name: pieces
+            label: Pieces
+            type: object
+            description: Drag to reorder. Use "Add an entry" to add a new piece.
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: subtitle
+                label: Subtitle
+                type: string
+                description: Optional, e.g. the character or theme.
+              - name: image
+                label: Image
+                type: image
+                required: true
+                description: JPG or PNG. Large photos are fine.
+              - name: blurb
+                label: Description
+                type: text
+                required: true
+              - name: medium
+                label: Medium
+                type: string
+                description: e.g. "Digital illustration" or "Ceramic & glaze".
+              - name: focus
+                label: Collage crop (optional)
+                type: string
+                description: Where to crop on the section collage page, as "left% top%", e.g. "50% 70%". Leave blank to center.
+              - name: heroFocus
+                label: Slideshow crop (optional)
+                type: string
+                description: Where to aim the homepage slideshow, usually at a face, as "left% top%", e.g. "50% 25%".
+
+      - name: artist
+        label: Name
+        type: string
+      - name: title
+        label: PDF cover title
+        type: string
+      - name: subtitle
+        label: PDF cover subtitle
+        type: string
+      - name: coverImage
+        label: PDF cover image
+        type: image
+      - name: about
+        label: About text (not currently shown on the site)
+        type: text
+        list: true

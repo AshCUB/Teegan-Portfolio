@@ -1,38 +1,34 @@
 # Teegan Reed — Art Portfolio
 
-Portfolio website for Teegan Reed (ceramics and digital illustration), with a print-ready PDF edition and a password-protected editor.
+Portfolio website for Teegan Reed (ceramics and digital illustration), with a print-ready PDF edition and a GitHub-based editor.
 
 - `index.html` — main site
 - `pdf.html` — view / download the PDF
 - `book.html` — print layout used to generate the PDF
 - `content/portfolio.json` — all sections, pieces, titles, descriptions, and images (edited through the editor)
-- `admin/` — the portfolio editor ([Decap CMS](https://decapcms.org/))
+- `.pages.yml` — editor configuration for [Pages CMS](https://pagescms.org/)
 
 ## Editing the portfolio
 
-Go to **https://ashcub.github.io/Teegan-Portfolio/admin/** and log in with your email and password.
+Go to **https://app.pagescms.org**, sign in with GitHub, and open **AshCUB/Teegan-Portfolio**.
 
-1. Open **Portfolio → Portfolio pieces**.
+1. Open **Portfolio**.
 2. Expand a section to edit its name or intro, or expand a piece to change its title, description, medium, or image.
-3. **Add** a piece with the "Add piece" button, **remove** one with its ✕, and **reorder** by dragging the ≡ handle.
-4. Click **Publish → Publish now**.
+3. Add a piece with **Add an entry**, remove one with its delete button, and reorder by dragging.
+4. Click **Save**.
 
-The website and the downloadable PDF update automatically about 1–2 minutes after publishing.
+The website and the downloadable PDF update automatically about 1–2 minutes after saving.
 
 ## How it works
 
-- Logins are handled by [DecapBridge](https://decapbridge.com/). Editors are invited by email from the DecapBridge dashboard; they don't need a GitHub account.
-- Saving in the editor commits to this repository. Every push runs `.github/workflows/deploy.yml`, which rebuilds the PDF from `book.html` and deploys the site to GitHub Pages.
+- Pages CMS signs in with GitHub and commits changes straight to this repository.
+- Every push runs `.github/workflows/deploy.yml`, which rebuilds the PDF from `book.html` and deploys the site to GitHub Pages.
 
 ### One-time setup
 
 1. **GitHub Pages:** Settings → Pages → *Source*: **GitHub Actions**.
-2. **DecapBridge:** create an account, add a site for `AshCUB/Teegan-Portfolio` with a fine-grained GitHub token (Contents: read & write on this repo only), login URL `https://ashcub.github.io/Teegan-Portfolio/admin/index.html`, auth type *Classic*. Copy the site's `identity_url` into `admin/config.yml`.
-3. **Invite editors** from the DecapBridge dashboard (Manage collaborators).
-
-### Testing the editor locally
-
-Run `npx decap-server` in this folder, serve the folder on any local web server, and open `/admin/`. Changes are written straight to your local files.
+2. **Pages CMS:** sign in at https://app.pagescms.org with GitHub and install the Pages CMS GitHub App on this repository.
+3. **Editors:** add them as collaborators on this GitHub repo (Settings → Collaborators, *Write* access), or invite them by email from the repo's settings inside Pages CMS (no GitHub account needed).
 
 ## Fonts
 
