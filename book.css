@@ -233,6 +233,13 @@ body {
   font-size: calc(var(--u) * 3.8);
   line-height: 1.05;
 }
+.piece-subtitle {
+  margin: calc(var(--u) * .8) 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: calc(var(--u) * 2.2);
+  line-height: 1.1;
+}
 .piece hr {
   width: calc(var(--u) * 6);
   margin: calc(var(--u) * 2.2) 0;

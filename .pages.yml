@@ -48,6 +48,10 @@ content:
                 label: Title
                 type: string
                 required: true
+              - name: subtitle
+                label: Subtitle
+                type: string
+                description: Optional, e.g. the character or theme.
               - name: image
                 label: Image
                 type: image
@@ -61,14 +65,13 @@ content:
                 label: Medium
                 type: string
                 description: e.g. "Digital illustration" or "Ceramic & glaze".
+              # Crop positions ("left% top%") for the collage page and homepage slideshow; hidden from the editor.
               - name: focus
-                label: Collage crop (optional)
                 type: string
-                description: Where to crop on the section collage page, as "left% top%", e.g. "50% 70%". Leave blank to center.
+                hidden: true
               - name: heroFocus
-                label: Slideshow crop (optional)
                 type: string
-                description: Where to aim the homepage slideshow, usually at a face, as "left% top%", e.g. "50% 25%".
+                hidden: true
 
       - name: artist
         label: Name

@@ -62,7 +62,7 @@ loadPortfolio().then(({ sections }) => {
             <span class="card-media"><img src="${p.image}" alt="${esc(p.title)}" loading="lazy"></span>
             <span class="card-meta">
               <span class="card-num">${pad(p.n)}</span>
-              <span class="card-title">${esc(p.title)}</span>
+              <span class="card-title">${esc(p.title)}${p.subtitle ? ` <em>${esc(p.subtitle)}</em>` : ""}</span>
               <span class="card-medium">${esc(p.medium)}</span>
             </span>
           </button>
@@ -107,6 +107,7 @@ loadPortfolio().then(({ sections }) => {
       $("#lb-count").textContent = `${pad(list.indexOf(i) + 1)} / ${pad(list.length)}`;
       $("#lb-section").textContent = `${p.sectionTitle} — ${pad(p.n)}`;
       $("#lb-title").textContent = p.title;
+      $("#lb-sub").textContent = p.subtitle || "";
       $("#lb-blurb").textContent = p.blurb;
       $("#lb-medium").textContent = p.medium;
     };

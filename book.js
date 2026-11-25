@@ -90,6 +90,7 @@ loadPortfolio().then(({ artist, title, subtitle, coverImage, sections }) => {
             <div class="piece-info">
               <span class="piece-num">${pad(i + 1)}</span>
               <h3 class="piece-title">${esc(p.title)}</h3>
+              ${p.subtitle ? `<p class="piece-subtitle">${esc(p.subtitle)}</p>` : ""}
               <hr>
               <p class="piece-blurb">${esc(p.blurb)}</p>
               <p class="piece-medium">${esc(p.medium)}</p>
