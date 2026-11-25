@@ -32,6 +32,28 @@
     marquee.innerHTML = strip + strip;
   }
 
+  const slides = $("#hero-slides");
+  if (slides) {
+    const art = (sections.find((s) => s.id === "digital") || sections[0]).pieces;
+    const origins = ["30% 30%", "70% 35%", "50% 25%", "35% 65%", "65% 60%", "50% 45%"];
+    slides.innerHTML = art
+      .map(
+        (p, i) =>
+          `<div class="hero-slide${i ? "" : " is-active"}"><img src="${p.image}" alt="" style="transform-origin:${origins[i % origins.length]}"${i > 1 ? ' loading="lazy"' : ""}></div>`
+      )
+      .join("");
+    const els = [...slides.children];
+    let cur = 0;
+    setInterval(() => {
+      const prev = els[cur];
+      cur = (cur + 1) % els.length;
+      els.forEach((el) => el.classList.remove("is-leaving"));
+      prev.classList.replace("is-active", "is-leaving");
+      els[cur].classList.add("is-active");
+      setTimeout(() => prev.classList.remove("is-leaving"), 2000);
+    }, 7000);
+  }
+
   const grid = $("#grid");
   if (grid) {
     grid.innerHTML = items
