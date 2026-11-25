@@ -35,12 +35,11 @@
   const slides = $("#hero-slides");
   if (slides) {
     const art = (sections.find((s) => s.id === "digital") || sections[0]).pieces;
-    const origins = ["30% 30%", "70% 35%", "50% 25%", "35% 65%", "65% 60%", "50% 45%"];
     slides.innerHTML = art
-      .map(
-        (p, i) =>
-          `<div class="hero-slide${i ? "" : " is-active"}"><img src="${p.image}" alt="" style="transform-origin:${origins[i % origins.length]}"${i > 1 ? ' loading="lazy"' : ""}></div>`
-      )
+      .map((p, i) => {
+        const focus = p.heroFocus || "50% 30%";
+        return `<div class="hero-slide${i ? "" : " is-active"}"><img src="${p.image}" alt="" style="object-position:${focus};transform-origin:${focus}"${i > 1 ? ' loading="lazy"' : ""}></div>`;
+      })
       .join("");
     const els = [...slides.children];
     let cur = 0;

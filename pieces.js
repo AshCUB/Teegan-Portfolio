@@ -65,6 +65,7 @@ window.PORTFOLIO = {
           title: "The Season for Reading",
           medium: "Digital illustration",
           image: "assets/images/season-for-reading.jpg",
+          heroFocus: "80% 40%",
           blurb:
             "An autumn evening in a cozy bedroom: string lights glowing outside, a candle burning, and a reader lost in a book with her feet in the air. Hand-lettered type and a tower of real book spines make this a love letter to reading season.",
         },
@@ -72,6 +73,7 @@ window.PORTFOLIO = {
           title: "Lady of the Seals",
           medium: "Digital illustration",
           image: "assets/images/lady-of-the-seals.jpg",
+          heroFocus: "50% 26%",
           blurb:
             "A joyful, folklore-inspired portrait of a red-haired woman surrounded by playful seals beneath a curtain of kelp. Soft underwater light and bubbly hand lettering give the piece a storybook warmth.",
         },
@@ -79,6 +81,7 @@ window.PORTFOLIO = {
           title: "Beach Day",
           medium: "Digital illustration",
           image: "assets/images/beach-day.jpg",
+          heroFocus: "40% 20%",
           blurb:
             "A laughing figure is ambushed with affection by two spotted seals at the water\u2019s edge. Layered brushwork in the surf and sunlight captures movement, sparkle, and pure delight.",
         },
@@ -86,6 +89,7 @@ window.PORTFOLIO = {
           title: "A Seal\u2019s Kiss",
           medium: "Digital illustration",
           image: "assets/images/a-seals-kiss.jpg",
+          heroFocus: "55% 25%",
           blurb:
             "Framed by an ornate, heart-patterned border, a curly-haired figure shares a gentle nose-to-nose moment with a seal. Sweeping golden shapes and soft rays of light turn a quiet gesture into a celebration of tenderness.",
         },
@@ -93,6 +97,7 @@ window.PORTFOLIO = {
           title: "Into the Hollow",
           medium: "Digital illustration",
           image: "assets/images/into-the-hollow.jpg",
+          heroFocus: "55% 22%",
           blurb:
             "A sword-carrying wanderer with butterfly-wing tattoos pauses in a tunnel of autumn foliage, reaching toward a single glowing moth. A restrained palette of rust and umber lets one small point of light carry the whole composition.",
         },
@@ -100,6 +105,7 @@ window.PORTFOLIO = {
           title: "Woodland Maiden",
           medium: "Digital illustration",
           image: "assets/images/woodland-maiden.jpg",
+          heroFocus: "40% 22%",
           blurb:
             "A red-haired woman in a laced bodice and billowing sleeves stands among dense golden-green leaves, a tiny ember of light at her fingertips. Rich foliage texture frames the figure like a living portrait.",
         },
@@ -107,6 +113,7 @@ window.PORTFOLIO = {
           title: "The Huntress",
           medium: "Digital illustration",
           image: "assets/images/the-huntress.jpg",
+          heroFocus: "35% 18%",
           blurb:
             "A forest archer leaps through a frame of leaves, bow drawn mid-flight. The muted sage-and-stone palette and strong diagonal pose put the focus on gesture, anatomy, and motion.",
         },
@@ -114,6 +121,7 @@ window.PORTFOLIO = {
           title: "Want a Sunflower?",
           medium: "Digital illustration",
           image: "assets/images/want-a-sunflower.jpg",
+          heroFocus: "35% 22%",
           blurb:
             "A bashful, wide-eyed centaur offers a bouquet of sunflowers on a glowing forest path. Drifting flecks of light, layered golden foliage, and a comic-style speech bubble give the moment a sweet, storybook charm.",
         },
@@ -121,6 +129,7 @@ window.PORTFOLIO = {
           title: "Bakery Escape",
           medium: "Digital comic page",
           image: "assets/images/bakery-escape.jpg",
+          heroFocus: "50% 25%",
           blurb:
             "A full comic page following a daring dash out of a village bakery, with a central splash panel framed by smaller action beats. A coordinated green-and-brown palette and a character expression key show sequential storytelling and design planning.",
         },
@@ -128,6 +137,7 @@ window.PORTFOLIO = {
           title: "You Are Enough",
           medium: "Digital poster",
           image: "assets/images/you-are-enough.jpg",
+          heroFocus: "50% 40%",
           blurb:
             "A vibrant poster of affectionate couples and friends, each vignette colored after a different pride flag. Swirling rainbow linework ties the scenes together around a simple, sincere message.",
         },
@@ -135,6 +145,7 @@ window.PORTFOLIO = {
           title: "Pretty in Pink",
           medium: "Digital illustration",
           image: "assets/images/pretty-in-pink.jpg",
+          heroFocus: "45% 30%",
           blurb:
             "A golden-curled elf in a puff-sleeved pink gown beams against a deep, dappled green backdrop. The complementary pink-and-green palette makes the character\u2019s joy leap off the page.",
         },
@@ -142,6 +153,7 @@ window.PORTFOLIO = {
           title: "Golden Hour",
           medium: "Digital character portrait",
           image: "assets/images/golden-hour.jpg",
+          heroFocus: "50% 25%",
           blurb:
             "A character portrait focused on skin tone, lighting, and hair texture: sculpted buns, warm highlights, and soft rim light against a clean background. A study in rendering and expression.",
         },
