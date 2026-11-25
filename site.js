@@ -1,5 +1,4 @@
-(() => {
-  const { sections, about } = window.PORTFOLIO;
+loadPortfolio().then(({ sections, about }) => {
   const $ = (sel) => document.querySelector(sel);
   const pad = (n) => String(n).padStart(2, "0");
   const esc = (s = "") =>
@@ -22,19 +21,19 @@
 
   const marquee = $("#marquee");
   if (marquee) {
-    const [a, b] = sections.map((s) => s.pieces);
+    const lists = sections.map((s) => s.pieces).reverse();
     const mixed = [];
-    for (let i = 0; i < Math.max(a.length, b.length); i++) {
-      if (b[i]) mixed.push(b[i]);
-      if (a[i]) mixed.push(a[i]);
+    for (let i = 0; i < Math.max(0, ...lists.map((l) => l.length)); i++) {
+      lists.forEach((l) => l[i] && mixed.push(l[i]));
     }
     const strip = mixed.map((p) => `<img src="${p.image}" alt="" loading="eager">`).join("");
     marquee.innerHTML = strip + strip;
   }
 
   const slides = $("#hero-slides");
-  if (slides) {
-    const art = (sections.find((s) => s.id === "digital") || sections[0]).pieces;
+  const art = sections.filter((s) => s.slideshow).flatMap((s) => s.pieces);
+  if (!art.length) art.push(...sections.flatMap((s) => s.pieces));
+  if (slides && art.length) {
     slides.innerHTML = art
       .map((p, i) => {
         const focus = p.heroFocus || "50% 30%";
@@ -170,4 +169,4 @@
   } else {
     reveals.forEach((el) => el.classList.add("is-in"));
   }
-})();
+});

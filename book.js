@@ -1,5 +1,4 @@
-(() => {
-  const { artist, title, subtitle, coverImage, sections } = window.PORTFOLIO;
+loadPortfolio().then(({ artist, title, subtitle, coverImage, sections }) => {
   const book = document.getElementById("book");
   const pad = (n) => String(n).padStart(2, "0");
   const esc = (s = "") =>
@@ -43,9 +42,24 @@
     12: ["p3 p0 p0 p4 p1 p1", "p5 t t p4 p6 p7", "p5 t t p8 p6 p9", "p10 p11 n n p2 p2"],
   };
 
+  // Any other count: 6-column grid, title + intro tiles 2x2 each, then widen the first images to fill empty cells.
+  const autoLayout = (n) => {
+    if (n <= 4) {
+      const small = { 1: ["grid-column:span 2;grid-row:span 2"], 2: ["grid-row:span 2", "grid-row:span 2"], 3: ["grid-row:span 2"] };
+      return { rows: 2, style: (i) => (small[n] || [])[i] || "" };
+    }
+    const rows = Math.ceil((n + 8) / 6);
+    const wide = rows * 6 - (n + 8);
+    return { rows, style: (i) => (i < wide ? "grid-column:span 2" : "") };
+  };
+
   sections.forEach((s, si) => {
     const areas = collages[s.pieces.length];
-    const gridStyle = areas ? `grid-template-areas:${areas.map((r) => `'${r}'`).join(" ")}` : "";
+    const auto = areas ? null : autoLayout(s.pieces.length);
+    const gridStyle = areas
+      ? `grid-template-areas:${areas.map((r) => `'${r}'`).join(" ")}`
+      : `grid-template-rows:repeat(${auto.rows}, 1fr)`;
+    const tileStyle = (i) => (areas ? `grid-area:p${i}` : auto.style(i));
     pages.push(`
       <section class="page collage${areas ? "" : " collage-auto"}" id="${s.id}" style="${gridStyle}">
         <div class="tile tile-title">
@@ -59,7 +73,7 @@
         ${s.pieces
           .map(
             (p, i) => `
-            <a class="tile tile-img" href="#${s.id}-${i + 1}" style="grid-area:p${i}">
+            <a class="tile tile-img" href="#${s.id}-${i + 1}" style="${tileStyle(i)}">
               <img src="${p.image}" alt=""${p.focus ? ` style="object-position:${p.focus}"` : ""}>
               <span>${pad(i + 1)}</span>
             </a>`
@@ -98,4 +112,4 @@
     el.textContent = [...book.children].indexOf(el.closest(".page")) + 1;
   });
   document.querySelectorAll("[data-wordmark]").forEach((el) => (el.innerHTML = window.WORDMARK));
-})();
+});

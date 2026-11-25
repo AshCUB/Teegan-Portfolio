@@ -1,0 +1,42 @@
+name: Build PDF and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build portfolio PDF from book.html
+        run: |
+          google-chrome --headless=new --no-sandbox --disable-gpu \
+            --allow-file-access-from-files --no-pdf-header-footer \
+            --virtual-time-budget=20000 \
+            --print-to-pdf="Teegan Reed - Portfolio.pdf" \
+            "file://$PWD/book.html"
+          test -s "Teegan Reed - Portfolio.pdf"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

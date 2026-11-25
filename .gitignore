@@ -4,3 +4,6 @@ tmp/
 _test.html
 Thumbs.db
 desktop.ini
+
+# Built automatically by .github/workflows/deploy.yml (run export-pdf.cmd for a local copy)
+Teegan Reed - Portfolio.pdf
