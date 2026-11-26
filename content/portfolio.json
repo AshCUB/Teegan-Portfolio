@@ -41,12 +41,12 @@
     },
     {
       "title": "Digital Art",
-      "intro": "Illustration, character design, and sequential art created digitally through procreate. Folklore, nature, and warmth run through work that ranges from single portraits to full comic pages.",
+      "intro": "Illustration, character design, and sequential art created digitally through Procreate. folklore, nature, and warmth run through work that ranges from single portraits to full comic pages.",
       "pieces": [
         {
           "title": "The Season for Reading",
           "image": "/assets/images/season-for-reading.jpg",
-          "blurb": "An autumn day in your cozy bed with the smell of pumpkin candles surrounding the air. This image is supposed to capture those peaceful, warm, moments of staying indoors during the fall season with a good book. This image was drawn on procreate and features many wonderful graphic novels. ",
+          "blurb": "An autumn day in your cozy bed with the smell of pumpkin candles surrounding the air. This image is supposed to capture those peaceful, warm, moments of staying indoors during the fall season with a good book. This image was drawn on Procreate and features many wonderful graphic novels. ",
           "medium": "Digital illustration"
         },
         {
@@ -70,13 +70,13 @@
         {
           "title": "Something Familiar",
           "image": "/assets/images/into-the-hollow.jpg",
-          "blurb": "A wandering traveler that stumbles upon a glowing butterfly. This piece features a girl with a butterfly tattoo, sword and long thick braided hair standing in the middle of a forest clearing. This piece was inspired by a love of butterfly back tattoos and the adventure one can find in the autumn forest. This was created on procreate and was an earlier piece that was focused on the idea of light and shadows.",
+          "blurb": "A wandering traveler that stumbles upon a glowing butterfly. This piece features a girl with a butterfly tattoo, sword and long thick braided hair standing in the middle of a forest clearing. This piece was inspired by a love of butterfly back tattoos and the adventure one can find in the autumn forest. This was created on Procreate and was an earlier piece that was focused on the idea of light and shadows.",
           "medium": "Digital illustration"
         },
         {
           "title": "The Sight of Celia",
           "image": "/assets/images/woodland-maiden.jpg",
-          "blurb": "\nA girl with medieval themed clothes looking through the leaves while holding a golden flower. This piece displays an original character named Celia who is based in medieval times. This piece was created with procreate. The focus on this piece was the light effects of the sun on leaves.",
+          "blurb": "\nA girl with medieval themed clothes looking through the leaves while holding a golden flower. This piece displays an original character named Celia who is based in medieval times. This piece was created with Procreate. The focus on this piece was the light effects of the sun on leaves.",
           "medium": "Digital illustration"
         },
         {
@@ -88,31 +88,31 @@
         {
           "title": "Want a Sunflower?",
           "image": "/assets/images/want-a-sunflower.jpg",
-          "blurb": "A shy centaur offering a bouquet of sunflowers in a glowy forest with the sight of the first snow. This piece features light greens and browns to make the main character pop against the background. This original character was inspired by storylike fantasies. This piece was created in procreate.",
+          "blurb": "A shy centaur offering a bouquet of sunflowers in a glowy forest with the sight of the first snow. This piece features light greens and browns to make the main character pop against the background. This original character was inspired by storylike fantasies. This piece was created in Procreate.",
           "medium": "Digital illustration"
         },
         {
           "title": "The Runaways",
           "image": "/assets/images/bakery-escape.jpg",
-          "blurb": "Two girls featured in the Victorian era running away from the police while comically stopping at a bakery to grab some baked goods during their great escape. This piece features two original characters named Rhiannon and Josephine that are a part of an even larger original comic book story. This piece was created with procreate. ",
+          "blurb": "Two girls featured in the Victorian era running away from the police while comically stopping at a bakery to grab some baked goods during their great escape. This piece features two original characters named Rhiannon and Josephine that are a part of an even larger original comic book story. This piece was created with Procreate. ",
           "medium": "Digital comic page"
         },
         {
           "title": "You Are Enough",
           "image": "/assets/images/you-are-enough.jpg",
-          "blurb": "A LGBTQ+ art piece displaying people performing different types of everyday actions while wearing different LGBTQ+ flags. This piece was created for pride month in order to emphasize the loving community and everyone's connection within it. The art was created with procreate. ",
+          "blurb": "A LGBTQ+ art piece displaying people performing different types of everyday actions while wearing different LGBTQ+ flags. This piece was created for pride month in order to emphasize the loving community and everyone's connection within it. The art was created with Procreate. ",
           "medium": "Digital poster"
         },
         {
           "title": "Pretty in Pink",
           "image": "/assets/images/pretty-in-pink.jpg",
-          "blurb": "A elf girl with strawberry blonde hair wearing a pink ballgown. This piece was created as a profile image for instagram. This art features bright colors and aspects that would be understood from far away on a smaller screen. This piece was created on procreate. ",
+          "blurb": "A elf girl with strawberry blonde hair wearing a pink ballgown. This piece was created as a profile image for instagram. This art features bright colors and aspects that would be understood from far away on a smaller screen. This piece was created on Procreate. ",
           "medium": "Digital illustration"
         },
         {
           "title": "Golden Hour",
           "image": "/assets/images/golden-hour.jpg",
-          "blurb": "A girl wearing a yellow top that matches the end highlights in her hair. The piece displays a study in rendering on what used to be flat colors. The art was created on procreate.",
+          "blurb": "A girl wearing a yellow top that matches the end highlights in her hair. The piece displays a study in rendering on what used to be flat colors. The art was created on Procreate.",
           "medium": "Digital character portrait"
         }
       ]
@@ -122,5 +122,5 @@
   "title": "Art Portfolio",
   "subtitle": "Ceramics & Digital Illustration",
   "coverImage": "/assets/images/season-for-reading.jpg",
-  "showClosing": true
+  "showClosing": false
 }
