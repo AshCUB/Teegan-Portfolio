@@ -32,9 +32,6 @@ content:
           - name: intro
             label: Section intro
             type: text
-          - name: slideshow
-            label: Show these pieces in the homepage slideshow
-            type: boolean
           - name: pieces
             label: Pieces
             type: object
@@ -65,11 +62,8 @@ content:
                 label: Medium
                 type: string
                 description: e.g. "Digital illustration" or "Ceramic & glaze".
-              # Crop positions ("left% top%") for the collage page and homepage slideshow; hidden from the editor.
+              # Crop position ("left% top%") on the section collage page; hidden from the editor.
               - name: focus
-                type: string
-                hidden: true
-              - name: heroFocus
                 type: string
                 hidden: true
 
@@ -85,3 +79,51 @@ content:
       - name: coverImage
         label: PDF cover image
         type: image
+      - name: showClosing
+        label: Include the "Thank you for viewing" page at the end of the PDF
+        type: boolean
+        default: true
+
+  - name: slideshow
+    label: Homepage slideshow
+    type: file
+    path: content/slideshow.json
+    format: json
+    fields:
+      - name: slides
+        label: Slides
+        type: object
+        description: The pictures behind the homepage intro, in order (drag to reorder). Add just one for a single still backdrop.
+        list:
+          min: 1
+          collapsible:
+            collapsed: false
+            summary: "Slide {index}"
+        fields:
+          - name: image
+            label: Picture
+            type: image
+            required: true
+          - name: horizontal
+            label: Focus left / right
+            type: select
+            description: Which part of the picture stays in view on wide screens.
+            options:
+              values:
+                - { name: "20%", label: Far left }
+                - { name: "35%", label: Left }
+                - { name: "50%", label: Center }
+                - { name: "65%", label: Right }
+                - { name: "80%", label: Far right }
+          - name: vertical
+            label: Focus up / down
+            type: select
+            description: Usually aim this at a face.
+            options:
+              values:
+                - { name: "10%", label: Very top }
+                - { name: "20%", label: Top }
+                - { name: "30%", label: Upper middle }
+                - { name: "40%", label: Middle }
+                - { name: "60%", label: Lower middle }
+                - { name: "80%", label: Bottom }

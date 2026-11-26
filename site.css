@@ -151,6 +151,7 @@ h1 em, h2 em, .hero-title em { color: var(--pink); }
 }
 .hero-slide.is-active { opacity: 1; }
 .hero-slide.is-active img, .hero-slide.is-leaving img { animation: hero-zoom 9s linear forwards; }
+.hero-slides.is-solo .hero-slide.is-active img { animation: hero-zoom 18s ease-in-out infinite alternate; }
 @keyframes hero-zoom {
   from { transform: scale(1.25); }
   to { transform: scale(1.45); }

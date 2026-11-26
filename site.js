@@ -1,4 +1,4 @@
-loadPortfolio().then(({ sections }) => {
+loadPortfolio().then(({ sections, slides: slidesData, showClosing }) => {
   const $ = (sel) => document.querySelector(sel);
   const pad = (n) => String(n).padStart(2, "0");
   const esc = (s = "") =>
@@ -17,7 +17,7 @@ loadPortfolio().then(({ sections }) => {
   onScroll();
 
   const pdfPages = $("#pdf-pages");
-  if (pdfPages) pdfPages.textContent = 2 + sections.reduce((n, s) => n + 1 + s.pieces.length, 0);
+  if (pdfPages) pdfPages.textContent = 1 + (showClosing ? 1 : 0) + sections.reduce((n, s) => n + 1 + s.pieces.length, 0);
 
   const marquee = $("#marquee");
   if (marquee) {
@@ -31,18 +31,20 @@ loadPortfolio().then(({ sections }) => {
   }
 
   const slides = $("#hero-slides");
-  const art = sections.filter((s) => s.slideshow).flatMap((s) => s.pieces);
-  if (!art.length) art.push(...sections.flatMap((s) => s.pieces));
+  const art = slidesData.length
+    ? slidesData
+    : sections.flatMap((s) => s.pieces).map((p) => ({ image: p.image, focus: "50% 30%" }));
   if (slides && art.length) {
+    slides.classList.toggle("is-solo", art.length === 1);
     slides.innerHTML = art
-      .map((p, i) => {
-        const focus = p.heroFocus || "50% 30%";
-        return `<div class="hero-slide${i ? "" : " is-active"}"><img src="${p.image}" alt="" style="object-position:${focus};transform-origin:${focus}"${i > 1 ? ' loading="lazy"' : ""}></div>`;
-      })
+      .map(
+        (p, i) =>
+          `<div class="hero-slide${i ? "" : " is-active"}"><img src="${p.image}" alt="" style="object-position:${p.focus};transform-origin:${p.focus}"${i > 1 ? ' loading="lazy"' : ""}></div>`
+      )
       .join("");
     const els = [...slides.children];
     let cur = 0;
-    setInterval(() => {
+    if (els.length > 1) setInterval(() => {
       const prev = els[cur];
       cur = (cur + 1) % els.length;
       els.forEach((el) => el.classList.remove("is-leaving"));

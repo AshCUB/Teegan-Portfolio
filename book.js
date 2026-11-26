@@ -1,4 +1,4 @@
-loadPortfolio().then(({ artist, title, subtitle, coverImage, sections }) => {
+loadPortfolio().then(({ artist, title, subtitle, coverImage, sections, showClosing }) => {
   const book = document.getElementById("book");
   const pad = (n) => String(n).padStart(2, "0");
   const esc = (s = "") =>
@@ -101,7 +101,7 @@ loadPortfolio().then(({ artist, title, subtitle, coverImage, sections }) => {
     });
   });
 
-  pages.push(`
+  if (showClosing) pages.push(`
     <section class="page closing">
       <div class="closing-mark" data-wordmark></div>
       <p class="closing-text">Thank you for viewing</p>
